@@ -1,6 +1,7 @@
-
 {
   "projects": {
-    "default": "react-my-burger"
+    "default": "react-my-burger-82791",
+    "react-my-burger-82791": "react-my-burger-82791",
+    "build": "react-my-burger-82791"
   }
 }
