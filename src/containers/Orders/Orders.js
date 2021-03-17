@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import Order from '../../components/Order/Order';
@@ -9,9 +9,16 @@ import * as actions from '../../store/actions/index';
 import Spinner from '../../components/UI/Spinner/Spinner';
 
 class Orders extends Component {
+    
     componentDidMount () {
         this.props.onFetchOrders(this.props.token, this.props.userId);
+        console.log(this.props)
     }
+
+    // useEffect() {
+    //     this.props.onFetchOrders(this.props.token, this.props.userId);
+
+    // }
 
     render () {
         let orders = <Spinner />;
@@ -47,3 +54,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect( mapStateToProps, mapDispatchToProps )( withErrorHandler( Orders, axios ) );
+
+
